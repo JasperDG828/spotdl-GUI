@@ -3,7 +3,9 @@ from tkinter import ttk
 from tkinter import simpledialog, filedialog
 import tkinter
 import os
-from turtle import title
+import sys
+def exit():
+    sys.exit()
 
 urls = ""
 loc=""
