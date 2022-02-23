@@ -13,3 +13,5 @@ A simple GUI for the [Spotdl](https://github.com/spotDL/spotify-downloader) CLI 
 1. Open `spotdlGUI.exe`
 2. Enter your output directory and music URLs.
 3. Click "Add URL".
+
+![Example](https://github.com/JasperDG828/spotdl-GUI/blob/main/example.jpg?raw=true)
