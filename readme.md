@@ -1,6 +1,6 @@
 # Spotdl GUI
 
-A simple GUI for the [Spotdl](https://github.com/spotDL/spotify-downloader) CLI tool
+A simple GUI for the [Spotdl](https://github.com/spotDL/spotify-downloader) CLI tool.
 
 ### Installation
 
