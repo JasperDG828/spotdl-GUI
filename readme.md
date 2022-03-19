@@ -6,7 +6,6 @@ A simple GUI for the [Spotdl](https://github.com/spotDL/spotify-downloader) CLI 
 
 1. Use the steps on the [spotdl github page](https://github.com/spotDL/spotify-downloader) to download spotdl and FFMPEG.
 2. Download this repository.
-3. Run `SunValley.bat` to install the theme.
 
 ### Usage
 
