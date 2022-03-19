@@ -12,5 +12,7 @@ A simple GUI for the [Spotdl](https://github.com/spotDL/spotify-downloader) CLI 
 1. Open `spotdlGUI.exe`
 2. Enter your output directory and music URLs.
 3. Click "Add URL".
+4. Click "Start download" to start downloading the songs
+ (Use the multi-threaded version for faster times, might affect CPU performance)
 
 ![Example](https://github.com/JasperDG828/spotdl-GUI/blob/main/example.jpg?raw=true)

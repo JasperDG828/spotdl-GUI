@@ -5,6 +5,7 @@ import tkinter
 import os
 import sys
 from git import Repo
+import threading
 def exit():
     sys.exit()
 
@@ -85,14 +86,18 @@ def removeUrl():
     except:
         a=0
 
-def dl():
+def dl(multiThreaded):
     if loc!="" and urls!="":
         global window
         window.destroy()
-        tk.messagebox.showinfo("Spotdl GUI", "You can follow the download progress in the command prompt (the black window).")
+        tk.messagebox.showinfo("Spotdl GUI", "You can follow the download progress in the command prompt (the black window, multithreaded tasks may not look best).")
         urlsArr = urls.split("\n")
-        for url in urlsArr:
-            os.system(f"cd /d \"{loc}\" && spotdl {url}")
+        if multiThreaded:
+            for url in urlsArr:
+                threading.Thread(target=lambda: os.system(f"cd /d \"{loc}\" && spotdl {url}")).start()
+        else:
+            for url in urlsArr:
+                os.system(f"cd /d \"{loc}\" && spotdl {url}")
         exit()
     elif loc=="":
         tkinter.messagebox.showwarning("Spotdl GUI", "Enter a valid path. Use \"browse\" to select a path.")
@@ -107,8 +112,11 @@ addURlBtn.grid(row=1, column=1)
 clearUrl = ttk.Button(text="Clear last URL", command=removeUrl, master=buttonsFrame, width=15, padding=5)
 clearUrl.grid(row=2, column=1)
 
-startDlBtn= ttk.Button(text="Start download", command=dl, master=buttonsFrame, width=15, padding=5)
+startDlBtn= ttk.Button(text="Start download", command=lambda: dl(False), master=buttonsFrame, width=15, padding=5)
 startDlBtn.grid(row=3, column=1)
+
+startDLMBtn = ttk.Button(text="Start download\n(multi-threaded)", command=lambda: dl(True), master=buttonsFrame, width=15, padding=5)
+startDLMBtn.grid(row=4, column=1)
 
 buttonsFrame.grid(row=3, column=2)
 
