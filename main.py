@@ -4,6 +4,7 @@ from tkinter import simpledialog, filedialog
 import tkinter
 import os
 import sys
+from git import Repo
 def exit():
     sys.exit()
 
@@ -15,11 +16,12 @@ window.title("Spotdl GUI")
 window.geometry("600x300")
 creds="Spotdl GUI By JasperDG, Sun Valley ttk theme By rdbende"
 try:
-    window.tk.call("source", "Sun-Valley-ttk-theme/sun-valley.tcl")
+    window.tk.call("source", "theme/sun-valley.tcl")
     window.tk.call("set_theme", "dark")
 except:
-    print("Could not find theme, using ttk basic")
-    creds="Spotdl GUI By JasperDG"
+    Repo.clone_from("https://github.com/rdbende/Sun-Valley-ttk-theme.git", "./theme")
+    window.tk.call("source", "theme/sun-valley.tcl")
+    window.tk.call("set_theme", "dark")
 
 browseFrame = ttk.Frame()
 
