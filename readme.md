@@ -16,3 +16,6 @@ A simple GUI for the [Spotdl](https://github.com/spotDL/spotify-downloader) CLI 
  (Use the multi-threaded version for faster times, might affect CPU performance)
 
 ![Example](https://github.com/JasperDG828/spotdl-GUI/blob/main/example.jpg?raw=true)
+
+### Problems
+If you experience any problems, feel free to report them under "Issues"
