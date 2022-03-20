@@ -5,13 +5,13 @@ A simple GUI for the [Spotdl](https://github.com/spotDL/spotify-downloader) CLI 
 ### Installation
 
 1. Use the steps on the [spotdl github page](https://github.com/spotDL/spotify-downloader) to download spotdl and FFMPEG.
-2. Download this repository.
+2. Go to "Releases" on this repository and download the latest version.
 
 ### Usage
 
-1. Open `spotdlGUI.exe`
-2. Enter your output directory and music URLs.
-3. Click "Add URL".
+1. Open `SpotDL-GUI-vX.X.exe`
+2. Browse to your desired output directory.
+3. Add spotify URLs using "Add URL".
 4. Click "Start download" to start downloading the songs
  (Use the multi-threaded version for faster times, might affect CPU performance)
 
