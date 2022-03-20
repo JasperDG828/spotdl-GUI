@@ -1,2 +1,2 @@
 @echo off
-pyinstaller --onefile --name spotdlGUI main.py
+pyinstaller --onefile --noconsole --name spotdlGUI main.py

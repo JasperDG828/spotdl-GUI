@@ -4,6 +4,7 @@ from tkinter import simpledialog, filedialog
 import tkinter
 import os
 import sys
+from click import progressbar
 from git import Repo
 import threading
 def exit():
@@ -86,11 +87,14 @@ def removeUrl():
     except:
         a=0
 
+
 def dl(multiThreaded):
     if loc!="" and urls!="":
         global window
         window.destroy()
-        tk.messagebox.showinfo("Spotdl GUI", "You can follow the download progress in the command prompt (the black window, multithreaded tasks may not look best).")
+
+        tkinter.messagebox.showinfo("Spotdl GUI", "Your download started, we'll let you know when it's ready. (press \"ok\" to actually start it)")
+
         urlsArr = urls.split("\n")
         if multiThreaded:
             for url in urlsArr:
@@ -98,7 +102,8 @@ def dl(multiThreaded):
         else:
             for url in urlsArr:
                 os.system(f"cd /d \"{loc}\" && spotdl {url}")
-        exit()
+        tkinter.messagebox.showinfo("Spotdl GUI", "Your download is ready!")
+        sys.exit()
     elif loc=="":
         tkinter.messagebox.showwarning("Spotdl GUI", "Enter a valid path. Use \"browse\" to select a path.")
     else:
