@@ -93,7 +93,7 @@ def dl(multiThreaded):
         global window
         window.destroy()
 
-        tkinter.messagebox.showinfo("Spotdl GUI", "Your download started, we'll let you know when it's ready. (press \"ok\" to actually start it)")
+        tkinter.messagebox.showinfo("Spotdl GUI", "Press OK to start the download, command prompts may pop up.")
 
         urlsArr = urls.split("\n")
         if multiThreaded:
@@ -102,7 +102,6 @@ def dl(multiThreaded):
         else:
             for url in urlsArr:
                 os.system(f"cd /d \"{loc}\" && spotdl {url}")
-        tkinter.messagebox.showinfo("Spotdl GUI", "Your download is ready!")
         sys.exit()
     elif loc=="":
         tkinter.messagebox.showwarning("Spotdl GUI", "Enter a valid path. Use \"browse\" to select a path.")
